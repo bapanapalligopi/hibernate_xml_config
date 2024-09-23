@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <!-- The root element for Hibernate configuration -->
+    <session-factory>
+        <!-- Database connection properties -->
+        <property name="hibernate.connection.username">root</property> <!-- Database username -->
+        <property name="hibernate.connection.password">19JRbgopi7@</property> <!-- Database password -->
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/hibernate_xml_config_db</property> <!-- JDBC URL for the database -->
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property> <!-- JDBC driver class for MySQL -->
+        
+        <!-- Hibernate properties -->
+        <property name="hibernate.show_sql">true</property> <!-- Enable SQL statement logging -->
+        <property name="hibernate.hbm2ddl.auto">update</property> <!-- Automatically update the database schema -->
+    </session-factory>
+</hibernate-configuration>

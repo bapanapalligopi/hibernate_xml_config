@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- Enable support for annotations in Spring -->
+    <context:annotation-config/>
+
+    <!-- Bean definition for Utils class -->
+    <bean id="utils" class="com.application.hibernateutils.Utils" 
+          init-method="getSession"/> <!-- Calls the getSession method after bean creation for initialization -->
+
+    <!-- Bean definition for Customer class -->
+    <bean id="customer" class="com.application.models.Customer"/> <!-- Creates a new instance of Customer -->
+
+    <!-- Bean definition for Operations class -->
+    <bean id="operations" class="com.application.operations.Operations">
+        <!-- Injects the Utils bean into Operations, allowing it to manage Hibernate sessions -->
+        <property name="utils" ref="utils"/>
+    </bean>
+
+</beans>
